@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Application\Ateliware.RepositoriosDestaques.Application.csproj" />
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Domain\Ateliware.RepositoriosDestaques.Domain.csproj" />
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Repository\Ateliware.RepositoriosDestaques.Repository.csproj" />
+  </ItemGroup>
+</Project>
