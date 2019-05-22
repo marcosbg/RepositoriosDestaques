@@ -1,0 +1,45 @@
+﻿@model IList<Ateliware.RepositoriosDestaques.Application.ViewModels.RepositoriosListagemViewModel>
+
+@{
+    ViewData["Title"] = "Destaques do GitHub";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Lista os repositórios destaques de 5 linguagens de programaçao: <strong>C#, Java, Python, Go e Swift.</strong></p>
+
+<form class="form-inline" action="@Url.Action("PesquisarDestaques")" method="post">
+
+    @{
+        if (Model.Count > 0)
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                Destaques encontrados com sucesso!
+            </div>
+        }
+    }
+
+    <button type="submit" class="btn btn-primary">Listar repositórios</button>
+    
+
+    <div class="row">
+        <br />
+        @{
+            foreach (var repositorio in Model)
+            {
+                <div class="col-md-6 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">@repositorio.Linguagem</div>
+                        <div class="panel-body">
+                            <h3><a href="@Url.Action("VisualizarDetalhes", new { id = repositorio.Id})">@repositorio.Nome</a> <small>@repositorio.Descricao</small></h3>
+                            <h4><span class="glyphicon glyphicon-star" aria-hidden="true"></span> @repositorio.Avaliacao</h4>
+                            <h4>Atualizado pela última vez: @repositorio.UltimaAtualicao</h4>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+    </form>

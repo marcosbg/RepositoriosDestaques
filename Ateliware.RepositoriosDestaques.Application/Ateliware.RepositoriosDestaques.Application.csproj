@@ -10,5 +10,13 @@
   <ItemGroup>
     <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Domain\Ateliware.RepositoriosDestaques.Domain.csproj" />
     <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Repository\Ateliware.RepositoriosDestaques.Repository.csproj" />
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.DomainServices\Ateliware.RepositoriosDestaques.DomainServices.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Octokit" Version="0.32.0" />
   </ItemGroup>
 </Project>

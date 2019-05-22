@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ateliware.RepositoriosDestaques.Application.Services;
+using Ateliware.RepositoriosDestaques.Domain.Repositories;
+using Ateliware.RepositoriosDestaques.Domain.Services;
+using Ateliware.RepositoriosDestaques.DomainServices;
+using Ateliware.RepositoriosDestaques.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +36,12 @@ namespace Ateliware.RepositoriosDestaques.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Dependency Injection
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddScoped<IDestaquesApplicationService, DestaquesApplicationService>();
+            services.AddScoped<IImportadorGitHubService, ImportadorGitHubService>();
+            services.AddScoped<IDestaquesRepository, DestaquesRepository>();
+            services.AddScoped<IHistoricoImportacaoRepository, HistoricoImportacaoRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

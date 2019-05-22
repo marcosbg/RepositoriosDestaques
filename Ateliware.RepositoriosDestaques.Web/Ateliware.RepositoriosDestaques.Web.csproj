@@ -10,7 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.IoC\Ateliware.RepositoriosDestaques.IoC.csproj" />
     <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Application\Ateliware.RepositoriosDestaques.Application.csproj" />
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Repository\Ateliware.RepositoriosDestaques.Repository.csproj" />
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.DomainServices\Ateliware.RepositoriosDestaques.DomainServices.csproj" />
+    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Domain\Ateliware.RepositoriosDestaques.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Destaques\" />
   </ItemGroup>
 </Project>

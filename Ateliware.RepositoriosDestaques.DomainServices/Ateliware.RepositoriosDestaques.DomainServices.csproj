@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Application\Ateliware.RepositoriosDestaques.Application.csproj" />
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Domain\Ateliware.RepositoriosDestaques.Domain.csproj" />
     <ProjectReference Include="..\Ateliware.RepositoriosDestaques.Repository\Ateliware.RepositoriosDestaques.Repository.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Octokit" Version="0.32.0" />
   </ItemGroup>
 </Project>

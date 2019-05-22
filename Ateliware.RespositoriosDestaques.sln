@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ateliware.RepositoriosDesta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ateliware.RepositoriosDestaques.Repository", "Ateliware.RepositoriosDestaques.Repository\Ateliware.RepositoriosDestaques.Repository.csproj", "{018BACCC-969E-4EC8-AB38-3FB0E6D6A7D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ateliware.RepositoriosDestaques.IoC", "Ateliware.RepositoriosDestaques.IoC\Ateliware.RepositoriosDestaques.IoC.csproj", "{F8157EAA-3B5D-4BEC-9037-97870E442E8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ateliware.RepositoriosDestaques.DomainServices", "Ateliware.RepositoriosDestaques.DomainServices\Ateliware.RepositoriosDestaques.DomainServices.csproj", "{3886C544-F2AB-4808-AC40-7682FDE40709}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,10 @@ Global
 		{018BACCC-969E-4EC8-AB38-3FB0E6D6A7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{018BACCC-969E-4EC8-AB38-3FB0E6D6A7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{018BACCC-969E-4EC8-AB38-3FB0E6D6A7D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8157EAA-3B5D-4BEC-9037-97870E442E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8157EAA-3B5D-4BEC-9037-97870E442E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8157EAA-3B5D-4BEC-9037-97870E442E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8157EAA-3B5D-4BEC-9037-97870E442E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3886C544-F2AB-4808-AC40-7682FDE40709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3886C544-F2AB-4808-AC40-7682FDE40709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3886C544-F2AB-4808-AC40-7682FDE40709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3886C544-F2AB-4808-AC40-7682FDE40709}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
