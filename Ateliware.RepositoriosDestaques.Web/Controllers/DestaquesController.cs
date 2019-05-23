@@ -34,7 +34,8 @@ namespace Ateliware.RepositoriosDestaques.Web.Controllers
 
         public IActionResult VisualizarDetalhes(int id)
         {
-            return View();
+            var repositorio = _destaquesApplicationService.ObterRepositorioDestaque(id);
+            return View(repositorio);
         }
     }
 }

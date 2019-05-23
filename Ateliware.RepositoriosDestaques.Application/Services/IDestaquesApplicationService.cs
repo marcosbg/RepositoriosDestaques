@@ -6,5 +6,6 @@ namespace Ateliware.RepositoriosDestaques.Application.Services
     public interface IDestaquesApplicationService
     {
         List<RepositoriosListagemViewModel> ListarRepositoriosDestaques();
+        RepositorioDestaqueViewModel ObterRepositorioDestaque(int id);
     }
 }

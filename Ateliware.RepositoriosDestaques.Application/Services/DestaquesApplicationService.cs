@@ -38,6 +38,7 @@ namespace Ateliware.RepositoriosDestaques.Application.Services
             {
                 retornoViewModel.Add(new RepositoriosListagemViewModel
                 {
+                    Id = repositorio.Id,
                     IdExterno = repositorio.IdExterno,
                     Nome = repositorio.Nome,
                     Descricao = repositorio.Descricao,
@@ -48,6 +49,28 @@ namespace Ateliware.RepositoriosDestaques.Application.Services
             }
 
             return retornoViewModel;
+        }
+
+        public RepositorioDestaqueViewModel ObterRepositorioDestaque(int id)
+        {
+            var destaque = _destaquesRepository.ObterPorId(id);
+
+            return new RepositorioDestaqueViewModel
+            {
+                Id = destaque.Id,
+                IdExterno = destaque.IdExterno,
+                Nome = destaque.Nome,
+                Descricao = destaque.Descricao,
+                Linguagem = destaque.Linguagem,
+                Avaliacao = destaque.Avaliacao.ToString(),
+                DataAtualizacao = destaque.DataAtualizacao.ToString("dd/MM/yyyy hh:mm"),
+                DataCriacao = destaque.DataCriacao.ToString("dd/MM/yyyy hh:mm"),
+                Proprietario = destaque.Proprietario,
+                QtdContribuidores = destaque.QtdContribuidores,
+                QtdForks = destaque.QtdForks,
+                QtdIssues = destaque.QtdIssues
+
+            };
         }
     }
 }

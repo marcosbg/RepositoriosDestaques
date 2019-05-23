@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Ateliware.RepositoriosDestaques.Domain.Models;
 using Ateliware.RepositoriosDestaques.Domain.Repositories;
 using Ateliware.RepositoriosDestaques.Domain.Services;
@@ -20,20 +21,37 @@ namespace Ateliware.RepositoriosDestaques.DomainServices
 
         public void ImportarRepositoriosDestaques()
         {
+            _destaquesRepository.ExcluirTodos();
+
+            var listaDestaques = new List<RepositorioDestaque>();
+
+            listaDestaques.AddRange(BuscarPorLinguagem(Octokit.Language.CSharp).Take(2));
+            listaDestaques.AddRange(BuscarPorLinguagem(Octokit.Language.Java).Take(2));
+            listaDestaques.AddRange(BuscarPorLinguagem(Octokit.Language.Python).Take(2));
+            listaDestaques.AddRange(BuscarPorLinguagem(Octokit.Language.Go).Take(2));
+            listaDestaques.AddRange(BuscarPorLinguagem(Octokit.Language.Scala).Take(2));
+
+            _destaquesRepository.Inserir(listaDestaques);
+
+            var novaImportacao = new HistoricoImportacao(listaDestaques.Count);
+
+            _historicoImportacaoRepository.Inserir(novaImportacao);
+        }
+
+        private List<RepositorioDestaque> BuscarPorLinguagem(Octokit.Language linguagem)
+        {
             var client = new Octokit.GitHubClient(new Octokit.ProductHeaderValue("marcosbg"));
 
             // Initialize a new instance of the SearchRepositoriesRequest class
             var request = new Octokit.SearchRepositoriesRequest
             {
-                Language = Octokit.Language.CSharp,
+                Language = linguagem,
                 Stars = Octokit.Range.GreaterThan(1000),
                 SortField = Octokit.RepoSearchSort.Stars,
                 Order = Octokit.SortDirection.Descending
             };
 
             var result = client.Search.SearchRepo(request).Result;
-
-            _destaquesRepository.ExcluirTodos();
 
             var listaDestaques = new List<RepositorioDestaque>();
 
@@ -55,11 +73,7 @@ namespace Ateliware.RepositoriosDestaques.DomainServices
                 });
             }
 
-            _destaquesRepository.Inserir(listaDestaques);
-
-            var novaImportacao = new HistoricoImportacao(result.Items.Count);
-
-            _historicoImportacaoRepository.Inserir(novaImportacao);
+            return listaDestaques;
         }
     }
 }

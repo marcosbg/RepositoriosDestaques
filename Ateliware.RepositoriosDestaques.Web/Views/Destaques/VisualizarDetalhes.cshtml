@@ -1,0 +1,19 @@
+﻿@model Ateliware.RepositoriosDestaques.Application.ViewModels.RepositorioDestaqueViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do Repositório";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Visualizar os detalhes do repositório destaque</p>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Model.Linguagem</div>
+    <div class="panel-body">
+        <h3><a href="@Url.Action("VisualizarDetalhes", new { id = Model.Id})">@Model.Nome</a> <small>@Model.Descricao</small></h3>
+        <h4><span class="glyphicon glyphicon-star" aria-hidden="true"></span> @Model.Avaliacao</h4>
+        <h4>Atualizado pela última vez: @Model.DataAtualizacao</h4>
+    </div>
+</div>
