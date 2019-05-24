@@ -55,6 +55,9 @@ namespace Ateliware.RepositoriosDestaques.Application.Services
         {
             var destaque = _destaquesRepository.ObterPorId(id);
 
+            if (destaque == null)
+                return null;
+
             return new RepositorioDestaqueViewModel
             {
                 Id = destaque.Id,

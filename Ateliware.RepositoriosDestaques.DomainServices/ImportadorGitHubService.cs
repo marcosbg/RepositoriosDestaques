@@ -33,7 +33,7 @@ namespace Ateliware.RepositoriosDestaques.DomainServices
 
             _destaquesRepository.Inserir(listaDestaques);
 
-            var novaImportacao = new HistoricoImportacao(listaDestaques.Count);
+            var novaImportacao = HistoricoImportacao.CriarHistorico(listaDestaques.Count);
 
             _historicoImportacaoRepository.Inserir(novaImportacao);
         }

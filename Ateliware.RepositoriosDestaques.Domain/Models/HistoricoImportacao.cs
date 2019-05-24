@@ -11,10 +11,13 @@ namespace Ateliware.RepositoriosDestaques.Domain.Models
 
         }
 
-        public HistoricoImportacao(int qtdRegistros)
+        public static HistoricoImportacao CriarHistorico(int qtdRegistros)
         {
-            QtdRegistro = qtdRegistros;
-            DataImportacao = DateTime.Now;
+            return new HistoricoImportacao
+            {
+                QtdRegistro = qtdRegistros,
+                DataImportacao = DateTime.Now
+            };
         }
 
         public int Id { get; set; }
